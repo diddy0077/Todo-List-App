@@ -123,6 +123,11 @@ body.dark button {
   color: #f1f1f1;
 }
 
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
 body.dark button:hover {
   background-color: #505050;
 }
