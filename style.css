@@ -1,11 +1,20 @@
+/* === Base === */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9f9f9;
   color: #333;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark {
+  background-color: #121212;
+  color: #e6be10;
+}
+
+
+/* === Header === */
 header {
   background-color: #007bff;
   color: white;
@@ -15,9 +24,34 @@ header {
   border-radius: 0 0 12px 12px;
   display: flex;
   align-items: center;
-  justify-content: space-between
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
 }
 
+body.dark header {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  border-bottom: 1px solid #333;
+}
+
+/* === Dark Mode Button === */
+.darkModeButton {
+  font-size: 18px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+body.dark .darkModeButton {
+  border: 1px solid #777;
+  color: #fff;
+}
+
+/* === Avatar === */
 img {
   width: 60px;
   height: 60px;
@@ -26,6 +60,7 @@ img {
   border-radius: 50%;
 }
 
+/* === Container === */
 .container {
   max-width: 500px;
   margin: 60px auto;
@@ -33,13 +68,21 @@ img {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 12px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+body.dark .container {
+  background-color: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.03);
+}
+
+/* === Headings === */
 h1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
+/* === Input Group === */
 .input-group {
   display: flex;
   gap: 10px;
@@ -51,8 +94,16 @@ input[type="text"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark input[type="text"] {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+/* === Buttons === */
 button {
   padding: 10px 16px;
   background-color: #007bff;
@@ -60,12 +111,23 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
+body.dark button {
+  background-color: #3a3a3a;
+  color: #f1f1f1;
+}
+
+body.dark button:hover {
+  background-color: #505050;
+}
+
+/* === Task List === */
 ul {
   list-style-type: none;
   padding: 0;
@@ -79,6 +141,12 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark li {
+  border: 1px solid #333;
+  background-color: #1a1a1a;
 }
 
 li.completed {
@@ -86,9 +154,18 @@ li.completed {
   color: gray;
 }
 
+body.dark li.completed {
+  color: #777;
+}
+
+/* === Buttons Inside Tasks === */
 li button {
   margin-left: 10px;
-  background-color: #dc3545;
+}
+
+.completeBtn {
+  background-color: #28a745;
+  color: white;
 }
 
 li button.complete {
@@ -99,13 +176,32 @@ li button:hover {
   opacity: 0.8;
 }
 
+body.dark .completeBtn {
+  background-color: #2f7f46;
+}
+
+body.dark li button.complete {
+  background-color: #2f7f46;
+}
+
+body.dark li button.delete {
+  background-color: #9a1f1f;
+}
+
+/* === Footer === */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
   color: #666;
+  transition: color 0.3s ease;
 }
 
+body.dark footer {
+  color: #999;
+}
+
+/* === Responsive === */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -116,16 +212,18 @@ footer {
     flex-direction: column;
   }
 
-  .input-group input[type="text"] {
-    
-  }
-
   button {
     margin-top: 10px;
   }
 
   .container {
-  max-width: 350px;
- 
-}
+    max-width: 350px;
+  }
+
+  nav {
+    flex-direction: row;
+    gap: 10rem;
+    align-items: center;
+    display: flex;
+  }
 }
