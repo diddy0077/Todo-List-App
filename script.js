@@ -45,6 +45,7 @@ function renderTasks() {
     li.appendChild(completeBtn);
     taskList.appendChild(li);
     const deleteBtn = document.createElement('button')
+    deleteBtn.classList.add('delete-btn');
     deleteBtn.textContent = 'Delete';
     li.appendChild(deleteBtn)
     deleteBtn.addEventListener('click', () => {
