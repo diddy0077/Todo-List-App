@@ -59,3 +59,14 @@ if (storedTasks) {
   taskArray = storedTasks;
 }
 renderTasks();
+const darkModeButton = document.querySelector('.dark-mode-button');
+const bodyEl = document.querySelector('body')
+darkModeButton.addEventListener('click', () => {
+  bodyEl.classList.toggle('dark')
+  if (bodyEl.classList.contains('dark')) {
+  darkModeButton.textContent = '☀️Light Mode';
+} else {
+  darkModeButton.textContent = '🌙Dark Mode';
+}
+})
+
